@@ -20,13 +20,13 @@ const Footer = () => {
 
 						<div>
 							<h1 className="text-indigo-500 text-lg">CALL</h1>
-							<a href="tel:254725944658" passHref={true}>
+							<a href="tel:254725944658" >
 								<h2 className="text-zinc-400 hover:cursor-pointer"> +254725944658</h2>
 							</a>
 						</div>
 						<div>
 							<h1 className="text-indigo-500 text-lg">HELP</h1>
-							<a href="mailto:info@housemarketplace.com" passHref={true}>
+							<a href="mailto:info@housemarketplace.com" >
 								<h2 className="text-zinc-400 hover:cursor-pointer">info@cartify.com</h2>
 							</a>
 
@@ -34,15 +34,15 @@ const Footer = () => {
 					</div>
 					<div className="w-1/4 sm:w-full p-4">
 						<h1 className="text-indigo-500 text-xl">CATEGORIES</h1>
-						<a href="/trending" passHref={true} className=" ">
+						<a href="/trending"  className=" ">
 							<h1 className=" cursor-pointer text-zinc-400 hover:text-indigo-500 hover:underline ">Trending Posts</h1>
 						</a>
-						<a href="/saved" passHref={true} className=" ">
+						<a href="/saved"  className=" ">
 							<h1 className=" cursor-pointer text-zinc-400 hover:text-indigo-500 hover:underline ">Saved Posts</h1>
 						</a>
 						{
 							user !== null && (
-								<a href={`/profile`} passHref={true} className=" ">
+								<a href={`/profile`}  className=" ">
 									<h1 className=" cursor-pointer text-zinc-400 hover:text-indigo-500 hover:underline ">My Posts</h1>
 								</a>
 							)
@@ -52,19 +52,19 @@ const Footer = () => {
 					</div>
 					<div className="w-1/4 sm:w-full  p-4">
 						<h1 className="text-indigo-500 text-xl">Quick as</h1>
-						<a href="/about" passHref={true} className=" ">
+						<a href="/about"  className=" ">
 							<h1 className={`cursor-pointer  text-zinc-400 hover:text-indigo-500 hover:underline `}>About Us</h1>
 						</a>
-						<a href="/contact" passHref={true} className=" ">
+						<a href="/contact"  className=" ">
 							<h1 className=" cursor-pointer text-zinc-400 hover:text-indigo-500 hover:underline ">Contact Us</h1>
 						</a>
-						<a href="/policy" passHref={true} className=" ">
+						<a href="/policy"  className=" ">
 							<h1 className=" cursor-pointer text-zinc-400 hover:text-indigo-500 hover:underline ">Privacy Policy</h1>
 						</a>
-						<a href="/terms" passHref={true} className=" ">
+						<a href="/terms"  className=" ">
 							<h1 className=" cursor-pointer text-zinc-400 hover:text-indigo-500 hover:underline ">Terms And Conditions</h1>
 						</a>
-						<a href="/faq" passHref={true} className=" ">
+						<a href="/faq"  className=" ">
 							<h1 className=" cursor-pointer text-zinc-400 hover:text-indigo-500 hover:underline ">FAQ</h1>
 						</a>
 					</div>

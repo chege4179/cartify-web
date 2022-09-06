@@ -30,16 +30,24 @@ const ProductCard = ({product}) => {
 				<div className='flex items-center justify-between mt-2'>
 
 					<div className={`flex w-full justify-end`}>
-
 						<a
-							href={`/property/${product._id}`}
+							href={`/product/${product._id}`}
+							className="btn-primary"
+						>
+
+							<p className='hover:underline hover:cursor-pointer'>
+								View
+							</p>
+						</a>
+						<button
+
 							className="btn-primary"
 						>
 
 							<p className='hover:underline hover:cursor-pointer'>
 								Add To Cart
 							</p>
-						</a>
+						</button>
 					</div>
 				</div>
 			</div>

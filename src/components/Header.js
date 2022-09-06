@@ -14,7 +14,7 @@ const Header = () => {
 		<div className='bg-white text-gray-200 shadow transition border-b-2 border-gray-300 border-solid  w-full h-16 sm:h-32 flex items-center justify-center px-4 fixed z-10'>
 			<div className='max-w-screen-xl w-screen flex sm:flex-col-reverse sm:w-full sm:h-full sm:justify-evenly items-center justify-center'>
 				<div className='flex w-4/5 sm:w-full sm:h-16 sm:h-full sm:flex sm: items-center justify-evenly'>
-					<a href='/' passHref className="sm:hidden">
+					<a href='/'  className="sm:hidden">
 						<h1 className='text-indigo-500 text-center font-extrabold sm:hidden text-3xl hover:cursor-pointer hover:text-blue-700'>{APP_TITLE}</h1>
 					</a>
 					<div className={`bg-gray-100 p-1 border-2 border-solid border-gray-600 rounded-md w-1/2 mx-2 flex sm:h-3/4 sm:items-center sm:justify-center  md:w-80`}>
@@ -40,7 +40,7 @@ const Header = () => {
 				</div>
 				<div className='flex sm:1/2  sm:w-full justify-end sm:justify-evenly'>
 					<div className="w-1/2 flex justify-start xl:hidden">
-						<a href='/' passHref>
+						<a href='/' >
 							<h1 className='text-indigo-500 text-center font-bold  text-2xl hover:cursor-pointer hover:text-blue-700'>{APP_TITLE}</h1>
 						</a>
 					</div>
@@ -49,17 +49,18 @@ const Header = () => {
 							user === null ? (
 
 								<>
-									<button
+									<a
+										href="/login"
 
 										className="btn-primary"
 									>
 										Log In
-									</button>
-									<button
-
+									</a>
+									<a
+										href="/signup"
 										className="btn-primary">
 										Create Account
-									</button>
+									</a>
 								</>
 							) : (
 
@@ -69,7 +70,7 @@ const Header = () => {
 										className="btn-primary h-10">
 										Create Post
 									</button>
-									<a href="/notifications" passHref={true}>
+									<a href="/notifications" >
 										<div className="h-full w-10 flex items-center justify-center hover:bg-indigo-200 mx-2 rounded-md hover:cursor-pointer">
 											<BsBellFill color="black" size={24} />
 										</div>
@@ -89,19 +90,19 @@ const Header = () => {
 											<h2 className='block px-2 py-2 text-sm font-bold text-gray-700 hover:bg-blue-500 hover:text-white'>{user.email}</h2>
 											<hr className='bg-black h-0.5'/>
 
-											<a href={`/profile/${user.username}`} passHref={true}>
+											<a href={`/profile/${user.username}`} >
 												<h1
 													className="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
 													My Profile
 												</h1>
 											</a>
-											<a href={"/post/new"} passHref={true}>
+											<a href={"/post/new"} >
 												<h1
 													className="block px-2 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
 													Create Post
 												</h1>
 											</a>
-											<a href="/account/settings" passHref={true}>
+											<a href="/account/settings" >
 												<h1
 													className="block px-2 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
 													Settings
