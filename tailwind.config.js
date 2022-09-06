@@ -4,7 +4,16 @@ module.exports = {
 		"./src/**/*.{js,jsx,ts,tsx}",
 	],
 	theme: {
-		extend: {},
+		extend: {
+			screens: {
+				'sm': {'max': '639px'},
+				'md': {'max': '767px'},
+				'lg': {'max': '1024px'},
+			},
+			colors: {
+				'greyish': 'rgb(240,240,240)'
+			},
+		},
 	},
 	plugins: [],
 }
