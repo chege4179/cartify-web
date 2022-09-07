@@ -3,7 +3,8 @@ name: Build and deploy website
 on:
   push:
     branches: [ main ]
-
+env:
+  CI: false
 jobs:
   build:
     runs-on: ubuntu-latest
