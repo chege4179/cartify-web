@@ -16,7 +16,6 @@ const CartReducer = (state={ cart:[],total:0,subtotal:0 },action) => {
                     ...state,cart: [...state.cart,product]
                 }
             }
-
         case CartConstants.REMOVE_FROM_CART:
             return {
                 ...state,cart: state.cart.filter((x) => x.id  !== action.payload.id)
@@ -44,16 +43,18 @@ const CartReducer = (state={ cart:[],total:0,subtotal:0 },action) => {
                     ...state,cart:[...state.cart]
                 }
             }
+
         case CartConstants.GET_SUBTOTAL:
             const currentcart = state.cart
             const simplecart = currentcart.map((a) => a.price * a.quantity)
-            const sumw = simplecart.reduce((a,b) => a + b,0)
+            const sum = simplecart.reduce((a,b) => a + b,0)
+            console.log("Sum",sum)
             return {
-                ...state,subtotal: sumw
+                ...state,subtotal: Math.ceil(sum)
             }
         case CartConstants.GET_TOTAL:
             return {
-                ...state,total:(state.subtotal * 1.16) + 1000
+                ...state,total:Math.ceil((state.subtotal * 1.16) + 1000)
             }
 
         default:

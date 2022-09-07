@@ -9,17 +9,35 @@ const CartItem = ({ cartItem }) => {
 			type:CartConstants.ADD_QUANTITY,
 			payload:{...cartItem}
 		})
+		dispatch({
+			type:CartConstants.GET_SUBTOTAL
+		})
+		dispatch({
+			type:CartConstants.GET_TOTAL
+		})
 	}
 	const ReduceQuantity = () => {
 		dispatch({
 			type:CartConstants.REDUCE_QUANTITY,
 			payload:{...cartItem}
 		})
+		dispatch({
+			type:CartConstants.GET_SUBTOTAL
+		})
+		dispatch({
+			type:CartConstants.GET_TOTAL
+		})
 	}
 	const RemoveFromCart = () => {
 		dispatch({
 			type:CartConstants.REMOVE_FROM_CART,
 			payload:{...cartItem}
+		})
+		dispatch({
+			type:CartConstants.GET_SUBTOTAL
+		})
+		dispatch({
+			type:CartConstants.GET_TOTAL
 		})
 	}
 	return (

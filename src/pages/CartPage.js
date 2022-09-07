@@ -28,39 +28,56 @@ const CartPage = () => {
 										})
 									}
 								</div>
-								<div className="w-2/6 h-60 w-full mt-2 bg-gray-100 p-2 drop-shadow-lg rounded-md">
+								<div className="w-2/6 h-80 w-full mt-2 bg-gray-100 p-2 drop-shadow-lg rounded-md">
 									<div className="w-full h-14 flex items-center justify-around">
 										<h1 className="font-bold text-2xl uppercase">
 											Cart Summary
 										</h1>
 									</div>
+
 									<hr className="bg-black h-0 w-full my-2"/>
 									<div className="w-full h-10 flex  justify-around">
 										<h1 className=" w-1/2 font-bold uppercase pl-4">
 											Cart SubTotal
 										</h1>
 										<h2 className="w-1/2 text-end pr-4">
-											Ksh {total}/=
+											Ksh {subtotal}/=
 										</h2>
 									</div>
+									<div className="w-full h-10 flex  justify-around">
+										<h1 className=" w-1/2 font-bold uppercase pl-4">
+											VAT
+										</h1>
+										<h2 className="w-1/2 text-end pr-4">
+											Ksh { 0.16 * subtotal}/=
+										</h2>
+									</div>
+									<div className="w-full h-10 flex  justify-around">
+										<h1 className=" w-1/2 font-bold uppercase pl-4">
+											Delivery Fee
+										</h1>
+										<h2 className="w-1/2 text-end pr-4">
+											Ksh 1000/=
+										</h2>
+									</div>
+									<hr className="bg-black h-0 w-full my-2"/>
 									<div className="w-full h-10 flex  justify-evenly">
 										<h1 className=" w-1/2 font-bold uppercase pl-4">
 											Cart Total
 										</h1>
 										<h2 className="w-1/2 text-end pr-4">
-											Ksh {total}/=
+											Ksh {Math.ceil(total)}/=
 										</h2>
 									</div>
-									<button className="btn-primary w-full">
-										Checkout
-									</button>
+									<div className="w-full mt-2 flex items-center justify-center">
+										<button className="btn-primary w-full">
+											Checkout
+										</button>
+									</div>
 								</div>
 							</div>
-
 						)
-
 					}
-
 				</div>
 			</div>
 		</div>

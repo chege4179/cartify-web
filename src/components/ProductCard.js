@@ -17,6 +17,12 @@ const ProductCard = ({ product }) => {
 				id: product._id, quantity: 1
 			}
 		})
+		dispatch({
+			type:CartConstants.GET_SUBTOTAL
+		})
+		dispatch({
+			type:CartConstants.GET_TOTAL
+		})
 
 	}
 	return (
