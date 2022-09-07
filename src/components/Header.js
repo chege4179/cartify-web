@@ -4,9 +4,14 @@ import {SelectUser} from "../ReduxStore/UserReducer";
 import { BsBellFill, BsSearch} from "react-icons/bs";
 import {Popover} from "@mantine/core";
 import {APP_TITLE} from "../util/config";
+import {GrCart} from "react-icons/gr";
+import {MDBBadge} from "mdb-react-ui-kit";
+import {SelectCart} from "../ReduxStore/CartReducer";
 
 const Header = () => {
 	const user = useSelector(SelectUser)
+	const cart = useSelector(SelectCart)
+
 	const [showDropdown, setShowDropdown] = useState(false)
 	const [searchTerm, setSearchTerm] = useState("")
 
@@ -49,32 +54,28 @@ const Header = () => {
 							user === null ? (
 
 								<>
-									<a
-										href="/login"
+									<a href="/cart">
+										<div className="h-full w-14 flex items-center justify-center  mx-2 rounded-md hover:cursor-pointer">
+											<GrCart color="black" size={24} />
+											{
+												cart.length !== 0 &&(
+													<MDBBadge className="absolute mb-4 px-2 bg-indigo-500 rounded-2xl text-sm ml-8"  color='danger' notification pill>{cart.length}</MDBBadge>
+												)
+											}
 
-										className="btn-primary"
-									>
+										</div>
+									</a>
+									<a href="/login" className="btn-primary">
 										Log In
 									</a>
-									<a
-										href="/signup"
-										className="btn-primary">
+									<a href="/signup" className="btn-primary">
 										Create Account
 									</a>
+
 								</>
 							) : (
 
 								<div className='flex '>
-									<button
-
-										className="btn-primary h-10">
-										Create Post
-									</button>
-									<a href="/notifications" >
-										<div className="h-full w-10 flex items-center justify-center hover:bg-indigo-200 mx-2 rounded-md hover:cursor-pointer">
-											<BsBellFill color="black" size={24} />
-										</div>
-									</a>
 									<div className=''>
 										<img
 											src={user.imageUrl} alt={user?.username} width={40}
@@ -93,13 +94,13 @@ const Header = () => {
 											<a href={`/profile/${user.username}`} >
 												<h1
 													className="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
-													My Profile
+													My Wishlist
 												</h1>
 											</a>
 											<a href={"/post/new"} >
 												<h1
 													className="block px-2 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
-													Create Post
+													Previous Orders
 												</h1>
 											</a>
 											<a href="/account/settings" >

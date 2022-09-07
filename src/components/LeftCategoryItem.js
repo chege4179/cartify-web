@@ -2,7 +2,7 @@ import React from 'react';
 import {MdKeyboardArrowRight} from "react-icons/md";
 
 
-const CategoryItem = ({ children,name,route }) => {
+const LeftCategoryItem = ({ children,name,route }) => {
 	return (
 		<a href={route} >
 			<div className="w-full h-10 flex justify-start rounded hover:bg-indigo-100 items-center px-2 hover:cursor-pointer">
@@ -22,4 +22,4 @@ const CategoryItem = ({ children,name,route }) => {
 	);
 };
 
-export default CategoryItem;
+export default LeftCategoryItem;

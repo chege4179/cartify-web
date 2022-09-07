@@ -2,17 +2,14 @@ import {createStore, applyMiddleware, combineReducers} from "redux";
 import {composeWithDevTools} from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import UserReducer from "./UserReducer";
-import modalReducer from "./ModalReducer";
-import PostsReducer from "./PostReducer";
-import SearchActiveTabReducer from "./SearchActiveTabReducer";
+import CartReducer from "./CartReducer";
 
 const middleware = [thunk];
 
 const AppReducer = combineReducers({
 	user: UserReducer,
-	modal: modalReducer,
-	posts: PostsReducer,
-	search: SearchActiveTabReducer,
+	cart: CartReducer,
+
 
 })
 const store = createStore(AppReducer, composeWithDevTools(applyMiddleware(...middleware)));
