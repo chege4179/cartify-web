@@ -1,6 +1,7 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
 import {CartConstants} from "../ReduxStore/CartConstants";
+import { Link } from "react-router-dom"
 
 const ProductCard = ({ product }) => {
 	const dispatch = useDispatch()
@@ -8,7 +9,13 @@ const ProductCard = ({ product }) => {
 	const AddToCart = () => {
 		dispatch({
 			type:CartConstants.ADD_TO_CART,
-			payload:product
+			payload:{
+				imageUrl: product.images[0].url,
+				name: product.name,
+				price: product.price,
+				description: product.description,
+				id: product._id, quantity: 1
+			}
 		})
 
 	}
@@ -29,15 +36,15 @@ const ProductCard = ({ product }) => {
 				<div className='flex items-center justify-between mt-2'>
 
 					<div className={`flex w-full justify-end`}>
-						<a
-							href={`/product/${product._id}`}
+						<Link
+							to={`/product/${product._id}`}
 							className="btn-primary"
 						>
 
 							<p className='hover:underline hover:cursor-pointer'>
 								View
 							</p>
-						</a>
+						</Link>
 						<button
 							onClick={AddToCart}
 							className="btn-primary"

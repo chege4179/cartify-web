@@ -7,6 +7,7 @@ const CartReducer = (state={ cart:[],total:0,subtotal:0 },action) => {
             const product = action.payload
             const existItem = state.cart.find((x) =>x.id === product.id)
             if (existItem){
+
                 return {
                     ...state,cart: state.cart.map((x) => x.id === existItem.id ? product : x)
                 }
@@ -52,7 +53,7 @@ const CartReducer = (state={ cart:[],total:0,subtotal:0 },action) => {
             }
         case CartConstants.GET_TOTAL:
             return {
-                ...state,total:state.subtotal *1.16 +1000
+                ...state,total:(state.subtotal * 1.16) + 1000
             }
 
         default:

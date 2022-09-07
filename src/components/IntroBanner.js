@@ -17,42 +17,42 @@ const IntroBanner = () => {
 				<div className="w-full h-10 flex items-center justify-center rounded  hover:bg-indigo-100">
 					<h1 className="w-full text-xl text-center font-bold">Categories</h1>
 				</div>
-				<LeftCategoryItem name="Electronics" route="/property/for-rent">
+				<LeftCategoryItem name="Electronics" route="/category/electronics">
 					<FcElectronics
 						size={25} color="black"
 						onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
 						onMouseOut={({target})=>target.style.color="black"}
 					/>
 				</LeftCategoryItem>
-				<LeftCategoryItem name="Computing" route="/property/for-sale">
+				<LeftCategoryItem name="Computing" route="/category/computing">
 					<GrPersonalComputer
 						size={25} color="black"
 						onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
 						onMouseOut={({target})=>target.style.color="black"}
 					/>
 				</LeftCategoryItem>
-				<LeftCategoryItem name="Gaming" route="/residential">
+				<LeftCategoryItem name="Gaming" route="/category/gaming">
 					<GrGamepad
 						size={25} color="black"
 						onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
 						onMouseOut={({target})=>target.style.color="black"}
 					/>
 				</LeftCategoryItem>
-				<LeftCategoryItem name="Baby Products" route="/commercial">
+				<LeftCategoryItem name="Baby Products" route="/category/baby-products">
 					<FaBaby
 						size={25} color="black"
 						onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
 						onMouseOut={({target})=>target.style.color="black"}
 					/>
 				</LeftCategoryItem>
-				<LeftCategoryItem name="Sporting Goods" route="/offices">
+				<LeftCategoryItem name="Sporting Goods" route="/category/sporting-goods">
 					<MdSportsBasketball
 						size={25} color="black"
 						onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
 						onMouseOut={({target})=>target.style.color="black"}
 					/>
 				</LeftCategoryItem>
-				<LeftCategoryItem name="Phones and Tablets" route="/shops">
+				<LeftCategoryItem name="Phones and Tablets" route="/category/phones-and-tablets">
 					<FcTabletAndroid
 						size={25} color="black"
 						onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}

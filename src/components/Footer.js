@@ -3,6 +3,8 @@ import {BsFacebook, BsWhatsapp} from "react-icons/bs";
 import {AiFillLinkedin, AiFillTwitterCircle, AiOutlineInstagram} from "react-icons/ai";
 import {useSelector} from "react-redux";
 import {SelectUser} from "../ReduxStore/UserReducer";
+import { Link } from "react-router-dom"
+
 
 const Footer = () => {
 	const user = useSelector(SelectUser)
@@ -20,29 +22,29 @@ const Footer = () => {
 
 						<div>
 							<h1 className="text-indigo-500 text-lg">CALL</h1>
-							<a href="tel:254725944658" >
+							<Link to="tel:254725944658" >
 								<h2 className="text-zinc-400 hover:cursor-pointer"> +254725944658</h2>
-							</a>
+							</Link>
 						</div>
 						<div>
 							<h1 className="text-indigo-500 text-lg">HELP</h1>
-							<a href="mailto:info@housemarketplace.com" >
+							<Link to="mailto:info@housemarketplace.com" >
 								<h2 className="text-zinc-400 hover:cursor-pointer">info@cartify.com</h2>
-							</a>
+							</Link>
 
 						</div>
 					</div>
 					<div className="w-1/4 sm:w-full p-4">
 						<h1 className="text-indigo-500 text-xl">CATEGORIES</h1>
-						<a href="/trending"  className=" ">
+						<Link to="/trending"  className=" ">
 							<h1 className=" cursor-pointer text-zinc-400 hover:text-indigo-500 hover:underline ">Trending Posts</h1>
-						</a>
-						<a href="/saved"  className=" ">
+						</Link>
+						<Link to="/saved"  className=" ">
 							<h1 className=" cursor-pointer text-zinc-400 hover:text-indigo-500 hover:underline ">Saved Posts</h1>
-						</a>
+						</Link>
 						{
 							user !== null && (
-								<a href={`/profile`}  className=" ">
+								<a to={`/profile`}  className=" ">
 									<h1 className=" cursor-pointer text-zinc-400 hover:text-indigo-500 hover:underline ">My Posts</h1>
 								</a>
 							)
@@ -52,21 +54,21 @@ const Footer = () => {
 					</div>
 					<div className="w-1/4 sm:w-full  p-4">
 						<h1 className="text-indigo-500 text-xl">Quick as</h1>
-						<a href="/about"  className=" ">
+						<Link to="/about"  className=" ">
 							<h1 className={`cursor-pointer  text-zinc-400 hover:text-indigo-500 hover:underline `}>About Us</h1>
-						</a>
-						<a href="/contact"  className=" ">
+						</Link>
+						<Link to="/contact"  className=" ">
 							<h1 className=" cursor-pointer text-zinc-400 hover:text-indigo-500 hover:underline ">Contact Us</h1>
-						</a>
-						<a href="/policy"  className=" ">
+						</Link>
+						<Link to="/policy"  className=" ">
 							<h1 className=" cursor-pointer text-zinc-400 hover:text-indigo-500 hover:underline ">Privacy Policy</h1>
-						</a>
-						<a href="/terms"  className=" ">
+						</Link>
+						<Link to="/terms"  className=" ">
 							<h1 className=" cursor-pointer text-zinc-400 hover:text-indigo-500 hover:underline ">Terms And Conditions</h1>
-						</a>
-						<a href="/faq"  className=" ">
+						</Link>
+						<Link to="/faq"  className=" ">
 							<h1 className=" cursor-pointer text-zinc-400 hover:text-indigo-500 hover:underline ">FAQ</h1>
-						</a>
+						</Link>
 					</div>
 				</div>
 				<div className="h-1/6 w-full flex justify-between items-center sm:flex-col sm:h-28 sm:pt-4">
