@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {ReactElement} from 'react';
 import Header from "./Header";
 import Footer from "./Footer";
 
-const Layout = ({ children,title }) => {
+
+type LayoutProps = {
+	children:ReactElement,
+	title: string | null
+}
+const Layout = ({ children,title } : LayoutProps) => {
 	return (
 		<div className='overflow-x-hidden flex flex-col flex-grow'>
 

@@ -2,8 +2,13 @@ import React from 'react';
 import {useDispatch} from "react-redux";
 import {CartConstants} from "../ReduxStore/CartConstants";
 import { Link } from "react-router-dom"
+import {Product} from "../types/Product";
 
-const ProductCard = ({ product }) => {
+
+type ProductCardProps = {
+	product:Product
+}
+const ProductCard = ({ product }:ProductCardProps) => {
 	const dispatch = useDispatch()
 
 	const AddToCart = () => {

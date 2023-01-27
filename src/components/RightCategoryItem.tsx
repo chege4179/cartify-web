@@ -1,7 +1,14 @@
-import React from 'react';
-import {MdKeyboardArrowRight} from "react-icons/md";
+import React, {ReactElement} from 'react';
+
 import { Link } from "react-router-dom"
-const RightCategoryItem = ({ children,route,name,subtitle }) => {
+
+type RightCategoryItemProps = {
+	children:ReactElement,
+	route:string,
+	name:string,
+	subtitle:string
+}
+const RightCategoryItem = ({ children,route,name,subtitle } :RightCategoryItemProps) => {
 	return (
 		<Link to={route} >
 			<div className="w-full h-14 flex justify-start rounded hover:bg-indigo-100 items-center p-2 hover:cursor-pointer">

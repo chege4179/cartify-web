@@ -1,8 +1,13 @@
 import React from 'react';
 import {CartConstants} from "../ReduxStore/CartConstants";
 import {useDispatch} from "react-redux";
+import {CartItem} from "../types/CartItem";
 
-const CartItem = ({ cartItem }) => {
+
+type CartItemProps = {
+	cartItem:CartItem
+}
+const CartItemCard = ({ cartItem } :CartItemProps) => {
 	const dispatch = useDispatch()
 	const AddQuantity = () => {
 		dispatch({
@@ -43,7 +48,7 @@ const CartItem = ({ cartItem }) => {
 	return (
 		<div className='w-full h-48 bg-gray-100 drop-shadow-lg rounded-xl flex my-2'>
 			<div className="w-1/3 p-2">
-				<img src={cartItem.imageUrl}alt='' className='w-full h-full rounded'/>
+				<img src={cartItem.imageUrl} alt='' className='w-full h-full rounded'/>
 			</div>
 			<div className='w-2/3 flex flex-col justify-evenly'>
 				<p className='font-bold text-2xl'>{cartItem.name}</p>
@@ -68,4 +73,4 @@ const CartItem = ({ cartItem }) => {
 	);
 };
 
-export default CartItem;
+export default CartItemCard;

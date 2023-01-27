@@ -1,6 +1,6 @@
 import {UserActions} from "./UserConstants";
 
-const UserReducer = (state = {user: null}, action) => {
+const UserReducer = (state = {user: null}, action:any) => {
 	switch (action.type) {
 		case UserActions.LOGIN_REQUEST:
 			return {
@@ -50,5 +50,5 @@ const UserReducer = (state = {user: null}, action) => {
 	}
 
 }
-export const SelectUser = state => state.user.user
+export const SelectUser = (state:any) => state.user.user
 export default UserReducer;

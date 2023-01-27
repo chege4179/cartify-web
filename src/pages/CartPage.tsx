@@ -1,7 +1,8 @@
 import React from 'react';
 import {useSelector} from "react-redux";
 import {SelectCart, SelectSubTotal, SelectTotal} from "../ReduxStore/CartReducer";
-import CartItem from "../components/CartItem";
+import CartItemCard from "../components/CartItemCard";
+import {CartItem} from "../types/CartItem";
 
 const CartPage = () => {
 	const cart = useSelector(SelectCart)
@@ -21,9 +22,9 @@ const CartPage = () => {
 							<div className="flex w-full h-full">
 								<div className="w-4/6 flex flex-col p-2">
 									{
-										cart.map((cartItem,index) => {
+										cart.map((cartItem:CartItem,index:number) => {
 											return(
-												<CartItem key={index} cartItem={cartItem}/>
+												<CartItemCard key={index} cartItem={cartItem}/>
 											)
 										})
 									}

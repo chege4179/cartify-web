@@ -1,6 +1,6 @@
 import React from 'react';
 import LeftCategoryItem from "./LeftCategoryItem";
-import {AiFillShop, AiOutlineQuestionCircle} from "react-icons/ai";
+import { AiOutlineQuestionCircle} from "react-icons/ai";
 import {FaBaby} from "react-icons/fa";
 
 import {FcElectronics, FcTabletAndroid} from "react-icons/fc"
@@ -20,43 +20,43 @@ const IntroBanner = () => {
 				<LeftCategoryItem name="Electronics" route="/category/electronics">
 					<FcElectronics
 						size={25} color="black"
-						onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
-						onMouseOut={({target})=>target.style.color="black"}
+						// onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
+						// onMouseOut={({target})=>target.style.color="black"}
 					/>
 				</LeftCategoryItem>
 				<LeftCategoryItem name="Computing" route="/category/computing">
 					<GrPersonalComputer
 						size={25} color="black"
-						onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
-						onMouseOut={({target})=>target.style.color="black"}
+						// onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
+						// onMouseOut={({target})=>target.style.color="black"}
 					/>
 				</LeftCategoryItem>
 				<LeftCategoryItem name="Gaming" route="/category/gaming">
 					<GrGamepad
 						size={25} color="black"
-						onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
-						onMouseOut={({target})=>target.style.color="black"}
+						// onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
+						// onMouseOut={({target})=>target.style.color="black"}
 					/>
 				</LeftCategoryItem>
 				<LeftCategoryItem name="Baby Products" route="/category/baby-products">
 					<FaBaby
 						size={25} color="black"
-						onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
-						onMouseOut={({target})=>target.style.color="black"}
+						// onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
+						// onMouseOut={({target})=>target.style.color="black"}
 					/>
 				</LeftCategoryItem>
 				<LeftCategoryItem name="Sporting Goods" route="/category/sporting-goods">
 					<MdSportsBasketball
 						size={25} color="black"
-						onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
-						onMouseOut={({target})=>target.style.color="black"}
+						// onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
+						// onMouseOut={({target})=>target.style.color="black"}
 					/>
 				</LeftCategoryItem>
 				<LeftCategoryItem name="Phones and Tablets" route="/category/phones-and-tablets">
 					<FcTabletAndroid
 						size={25} color="black"
-						onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
-						onMouseOut={({target})=>target.style.color="black"}
+						// onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
+						// onMouseOut={({target})=>target.style.color="black"}
 					/>
 				</LeftCategoryItem>
 
@@ -73,8 +73,9 @@ const IntroBanner = () => {
 				>
 					<AiOutlineQuestionCircle
 						size={27} color="black"
-						onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
-						onMouseOut={({target})=>target.style.color="black"}/>
+						// onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
+						// onMouseOut={({target})=>target.style.color="black"}
+					/>
 				</RightCategoryItem>
 
 				<RightCategoryItem
@@ -84,8 +85,9 @@ const IntroBanner = () => {
 				>
 					<IoLogoDropbox
 						size={27} color="black"
-						onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
-						onMouseOut={({target})=>target.style.color="black"}/>
+						// onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
+						// onMouseOut={({target})=>target.style.color="black"}
+					/>
 				</RightCategoryItem>
 				<RightCategoryItem
 					name="Sell on Cartify"
@@ -94,8 +96,9 @@ const IntroBanner = () => {
 				>
 					<MdOutlineSell
 						size={27} color="black"
-						onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
-						onMouseOut={({target})=>target.style.color="black"}/>
+						// onMouseOver={({target})=>target.style.color="rgb(79 70 229)"}
+						// onMouseOut={({target})=>target.style.color="black"}
+					/>
 				</RightCategoryItem>
 
 			</div>

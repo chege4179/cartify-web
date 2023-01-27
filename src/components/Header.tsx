@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useSelector} from "react-redux";
 import {SelectUser} from "../ReduxStore/UserReducer";
-import { BsBellFill, BsSearch} from "react-icons/bs";
+import {  BsSearch} from "react-icons/bs";
 import {Popover} from "@mantine/core";
 import {APP_TITLE} from "../util/config";
 import {GrCart} from "react-icons/gr";

@@ -1,0 +1,80 @@
+import {CartConstants} from "./CartConstants";
+import {CartItem} from "../types/CartItem";
+
+
+type InitialState = {
+     cart: CartItem[],
+     total: number,
+     subtotal: number,
+}
+type ActionType= {
+     type:string,
+     payload:CartItem
+}
+const CartReducer = (state: InitialState = {cart: [], total: 0, subtotal: 0}, action: ActionType) => {
+
+     switch (action.type) {
+          case CartConstants.ADD_TO_CART:
+               const product = action.payload as CartItem
+               const existItem = state.cart.find((x) => x.id === product.id)
+               if (existItem) {
+
+                    return {
+                         ...state, cart: state.cart.map((x) => x.id === existItem.id ? product : x)
+                    }
+               } else {
+                    return {
+                         ...state, cart: [...state.cart, product]
+                    }
+               }
+          case CartConstants.REMOVE_FROM_CART:
+               return {
+                    ...state, cart: state.cart.filter((x) => x.id !== action.payload.id)
+
+               }
+          case CartConstants.ADD_QUANTITY:
+
+               const id = action.payload.id
+               const findIncreasedItem:  CartItem  = state.cart.find((item) => item.id === id)!!
+               findIncreasedItem.quantity = ++findIncreasedItem.quantity
+
+               return {
+                    ...state, cart: [...state.cart]
+               }
+          case CartConstants.REDUCE_QUANTITY:
+
+               const id22 = action.payload.id
+               const findDecreasedItem: CartItem  = state.cart.find((item) => item.id === id22)!!
+               if (findDecreasedItem.quantity === 1) {
+                    return {
+                         ...state, cart: [...state.cart]
+                    }
+               } else {
+                    findDecreasedItem.quantity = --findDecreasedItem.quantity
+                    return {
+                         ...state, cart: [...state.cart]
+                    }
+               }
+
+
+          case CartConstants.GET_SUBTOTAL:
+               const currentcart = state.cart
+               const simplecart = currentcart.map((a) => a.price * a.quantity)
+               const sum = simplecart.reduce((a, b) => a + b, 0)
+               console.log("Sum", sum)
+               return {
+                    ...state, subtotal: Math.ceil(sum)
+               }
+          case CartConstants.GET_TOTAL:
+               return {
+                    ...state, total: Math.ceil((state.subtotal * 1.16) + 1000)
+               }
+
+          default:
+               return state
+     }
+}
+export const SelectCart = (state: any) => state.cart.cart
+export const SelectTotal = (state: any) => state.cart.total
+export const SelectSubTotal = (state: any) => state.cart.subtotal
+export default CartReducer

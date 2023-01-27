@@ -44,7 +44,7 @@ const Footer = () => {
 						</Link>
 						{
 							user !== null && (
-								<a to={`/profile`}  className=" ">
+								<a href={`/profile`}  className=" ">
 									<h1 className=" cursor-pointer text-zinc-400 hover:text-indigo-500 hover:underline ">My Posts</h1>
 								</a>
 							)

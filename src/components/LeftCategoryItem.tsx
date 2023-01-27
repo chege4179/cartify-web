@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {ReactElement} from 'react';
 import {MdKeyboardArrowRight} from "react-icons/md";
 import {Link} from "react-router-dom"
 
-const LeftCategoryItem = ({children, name, route}) => {
+
+type LeftCategoryItemProps = {
+	children:ReactElement,
+	name:string,
+	route:string,
+}
+const LeftCategoryItem = ({children, name, route} :LeftCategoryItemProps) => {
 	return (
 		<Link to={route}>
 			<div className="w-full h-10 flex justify-start rounded hover:bg-indigo-100 items-center px-2 hover:cursor-pointer">
@@ -13,8 +19,8 @@ const LeftCategoryItem = ({children, name, route}) => {
 				<MdKeyboardArrowRight
 					className="flex"
 					size={20}
-					onMouseOver={({target}) => target.style.color = "rgb(79 70 229)"}
-					onMouseOut={({target}) => target.style.color = "black"}
+					// onMouseOver={({target}) => target.style.color = "rgb(79 70 229)"}
+					// onMouseOut={({target}) => target.style.color = "black"}
 				/>
 			</div>
 		</Link>
