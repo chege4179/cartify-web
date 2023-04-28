@@ -1,5 +1,11 @@
 
 
+export interface AllProductsResponse  {
+     success:boolean,
+     msg:string,
+     products:Product[]
+}
+
 export interface Product {
      images:        Image[];
      onOffer:       boolean;
